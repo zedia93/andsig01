@@ -1,0 +1,99 @@
+##################################
+ESTRCTURA DEL MODULO  -- ACCOUNT
+
+INC = inc.function.account.php (i = account)
+
+	-login  (r)
+	-logout (r)
+	-signin (r)
+		-request (a)
+		-approve (a)
+			-show 	(v)
+			-accept (v)
+			-deny	(v)
+			
+	-level (r)
+		-show 	 (a)
+		-modify  (a)
+		-suspend (a)
+		
+###################################
+ESTRCTURA DE LA CARPETA DEL MODULO
+
+--Module
+	- controller
+		.{ctrl.main}.php
+	- templates
+	- *{main}.php
+	
+###################################
+VARIABLES INDEX { l = modulo o controlador de modulo a utilizar } 
+VARIABLE CONTROLADOR {i = complemento o componente inc a utilizar, 
+					  t = template a utilizar}
+VARIABLE INCLUDE {r = requerimiento, 
+				  a = acción a ejecutar, {v, v1, v2, v3 } = variable complementaria
+
+a=register&m=account&i=account
+
+#########################
+MODELO DE INSERCION DE CODIGO SQL POR ARREGLO
+
+$CODE = array(
+    'db'    => DB_LOGIN,
+    'table' => 't_users',
+    'query'  => array(
+            array(
+                'into' => 'user',
+                'value' => $var
+            ),
+            array(
+                'into' => 'pwd',
+                'value' => md5('15425302')
+            )
+        )
+);
+
+Encode::INSERT($CODE);
+
+###########################
+MODELO DE CONSULTA  BASICA TIPO ARRAY
+
+$QUERY = array(
+    'db'    => DB_LOGIN,
+    'query' => sprintf("SELECT userId FROM `t_logs` WHERE `token` LIKE '%s' AND `status` = 1",$_COOKIE['tokenId'])
+);
+
+Encode::QUERY($QUERY)->ASOC()
+Encode::QUERY($QUERY)->ROWS()
+
+
+###############################
+MODELO DE INC-FUNTION 
+
+if (htmlspecialchars($_GET["r"]) == 'signin'){
+
+		if (isset($_GET["a"])){
+			
+			if (htmlspecialchars($_GET["a"]) == 'request'){
+
+				if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+					$USER['name'] 		= $_POST['name'];
+					$USER['document'] 	= $_POST['document'];
+					$USER['username'] 	= $_POST['username'];
+					$USER['password'] 	= $_POST['password'];
+					
+					//VERIFICACIÓN SIMPLE DE INYECCION
+					if(isAlphaNumeric($USER['name']) && isClearString($USER['document']) && isClearString($USER['username']) && isClearString($USER['password'])){
+						
+										
+
+					}else{Jecho('Query Error', 'code injection detected');}
+					
+				}else{Jecho('Query Error', 'error al ejecutar la consulta [POST]');}
+
+			}else{Jecho('Query Error', 'syntax error REQUETS-A#4');}
+			
+		}else{Jecho('Query Error', 'syntax error ISSET-A#3');}
+	
+}

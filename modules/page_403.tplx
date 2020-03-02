@@ -1,0 +1,13 @@
+		<!-- page content -->
+
+          <div class="col-middle">
+            <div class="text-center text-center">
+              <i class="fas fa-ban fa-10x"></i>
+              <h2>Access denied</h2>
+              <p>Full authentication is required to access this resource.
+              </p>
+             <div class="mid_center">                           
+              <h3 class="error-number">403</h3>   
+              </div>
+            </div>
+          </div>

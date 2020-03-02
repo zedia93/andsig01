@@ -1,0 +1,108 @@
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+    <div class="x_title">
+      <h3>Administración de Usuarios</h3>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content main">
+      <form id="FormListUsers">
+        <div class="form-group">                        
+        <label>Elegir Usuario * :</label>        
+        <select name="user" class="select-user form-control" required="">
+        <option selected disabled value="">ELEGIR USUARIO..</option>
+          <!-- CARGAR LISTA DE USUARIOS   -->
+          <USERSLIST/> 
+        </select>
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-warning">Cargar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12 permissions" style="display:none;">
+<div class="x_panel">
+  <div class="x_content">
+    <form id="FormPermissions" class="form-label-left input_mask">
+    <input type="hidden" name="ID">
+
+    <div class="form-group row">
+      <div class="col-md-4 text-center text-danger" style="font-weight: bold;">
+        <span>ESTADO DEL USUARIO</span>
+        <select name="STATUS" class="form-control" required="">
+          <option value="1">HABILITADO</option>
+          <option value="0">INHABILITADO</option>
+        </select>					
+      </div>
+      
+      <div class="col-md-4 text-center">
+        <span>TIPO DE CUENTA</span>
+        <select name="ULEVEL" class="form-control" required="">
+          <option value="0">UNKNOW</option>
+          <option value="1">REGULAR</option>
+          <option value="2">MODERADOR</option>
+          <option value="99">ADMINISTRADOR</option>
+        </select>					
+      </div>	
+      
+      <div class="col-md-4 text-center">
+        <span>CATEGORIA DEL USUARIO</span>
+        <select name="CATEGORIA" class="form-control" required="">
+          <option value="0">UNKNOW</option>
+          <option value="1">CLIENTE</option>
+          <option value="2">EMPLEADO</option>
+          <option value="3">OTROS</option>
+        </select>					
+      </div>
+    </div>				
+
+    <div class="form-group row">
+      <!-- CARGANDO PERMISOS -->
+        <MODULES/>
+    </div>
+
+    <div class="ln_solid"></div>
+
+    <div class="form-group row">
+      
+      <div class="col-md-6 text-center text-warning" style="font-weight: bold;">
+        <span>NOMBRE Y APELLIDO</span>
+        <input name="NAME" type="text" class="form-control text-uppercase" placeholder="NOMBRE Y APELLIDO" minlength="4" maxlength="45" pattern="[a-zA-Z\s]+" autocomplete="off" required>				
+      </div>
+      
+      <div class="col-md-6 text-center text-warning" style="font-weight: bold;">
+        <span>DOCUMENTO</span>
+        <input name="DOCUMENT" type="number" class="form-control" placeholder="DOCUMENTO" minlength="8" maxlength="12" pattern="[0-9]+" required>			
+      </div>
+
+    </div>
+
+      <div class="form-group row">
+      <div class="col-md-6 text-center text-warning" style="font-weight: bold;">
+        <span>NOMBRE DE USUARIO</span>
+        <input name="USER" type="text" class="form-control" placeholder="NOMBRE DE USUARIO" minlength="4" maxlength="16" pattern="[a-zA-Z0-9_-]+" autocomplete="off" required>				
+      </div>
+      
+      <div class="col-md-6 text-center text-warning" style="font-weight: bold;">
+        <span>CONTRASEÑA</span>
+        <input name="PWD" type="password" class="form-control" placeholder="CONTRASEÑA" minlength="4" maxlength="16" pattern="[a-zA-Z0-9_-]+" autocomplete="off">					
+      </div>
+      
+    </div>	
+
+    <div class="ln_solid"></div>
+
+    <div class="form-group row">
+      <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-5">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+    </form>
+  </div>			
+  </div>
+
+</div>
+</div>

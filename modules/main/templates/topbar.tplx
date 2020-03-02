@@ -1,0 +1,38 @@
+<div class="nav_menu">
+<nav>
+
+  <div class="nav icon-alert">
+    <span data-toggle="tooltip" data-placement="bottom" data-original-title="Buscar cliente">
+      <a id="search_icon">
+      <i class="fas fa-search"></i>
+    </a>
+  </div>
+
+  <ul class="nav navbar-nav navbar-right">
+    <li class="">
+      <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <img src="images/img.png" alt="">{{nombre}} <span class="fas fa-angle-down"></span>
+      </a>
+      <ul class="dropdown-menu dropdown-usermenu pull-right">
+        
+        <!-- Menu de Usuario -->        
+        <TOPBARMENU/>
+
+      </ul>
+    </li>
+
+    <li role="presentation" class="dropdown">
+      <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+        <i class="far fa-envelope"></i>
+        <span class="badge bg-green">{{notify}}</span>
+      </a>
+      <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+
+        <!-- Menu de Usuario -->        
+        <TOPNOTIFY/>      
+
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>

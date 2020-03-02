@@ -1,0 +1,22 @@
+<div id="SistemInfo" style="padding: 6px;float: left; display: block;">
+	<h5 style="padding: 0 5px;">
+	<i class="far fa-clock" style="padding: 0px 5px;"></i>Hora del Sistema: <span class="Clock">-</span> |
+	
+	<small>
+	<i class="fa fa-save" style="padding: 0px 5px;"></i>Último backup: <span class="lastbackup">-</span>
+	</small> |
+	<small>
+	<i class="fa fa-database" style="padding: 0px 5px;"></i>Próximo backup: <span class="nextbackup">-</span>
+	</small>
+	
+	</h5>
+	
+	
+</div>
+
+<div id="copyright" class="pull-right" style="padding: 6px 15px; display: block;">
+	<h5>
+	<i class="far fa-user-circle" style="padding: 0px 5px;"></i>
+	Eduardo J. Giménez .S - Agradecimiento a <a href="https://colorlib.com">Colorlib</a>
+	</h5>
+</div>
